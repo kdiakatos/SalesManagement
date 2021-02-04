@@ -2,8 +2,8 @@
 
 This application allows its users to perform the following: 
 
- 1. Create/Edit/Delete Sellers
- 2. Create/Edit/Delete Sales
+ 1. Create/Edit/Delete/Details/View All Sellers
+ 2. Create/Edit/Delete/Details/View All Sales
  
 
 
@@ -17,6 +17,7 @@ The architectural design follows the 3-Layer architecture. A short description a
   ### 2. Business Layer
       It is a class library project that implements this layer, which operates as the “middleman” 
      between the data access layer and the presentation layer. 
+     It also contains all the business logic of the application (e.g. mappings, calculations etc.).
   ### 3. Presentation Layer  
       It is the front end layer in the 3-tier system and consists of the user interface. 
 
