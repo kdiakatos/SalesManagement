@@ -12,5 +12,6 @@ namespace SalesManagement.DataLayer.Interfaces
         Task<List<Seller>> GetAllSellersAsync();
         Task<Seller> GetSellerByIdAsync(Guid id);
         Task<Seller> UpdateSellerAsync(Seller seller);
+        Task<int> GetNumberOfSellers();
     }
 }

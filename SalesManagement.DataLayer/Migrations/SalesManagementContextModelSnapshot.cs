@@ -32,7 +32,7 @@ namespace SalesManagement.DataLayer.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("TransactionAmount")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("SaleId");
 

@@ -5,6 +5,7 @@ using SalesManagement.DataLayer.Entities;
 using SalesManagement.DataLayer.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -54,9 +55,29 @@ namespace SalesManagement.BusinessLayer.Services
             foreach (var item in sellersList)
             {
                 var sales = response.FirstOrDefault(a => a.SellerId == item.SellerId).Sales.ToList();
-                item.Commision = (sales.Sum(a => a.TransactionAmount) * 10) / 100; //TODO
+                item.Commission = (sales.Sum(a => a.TransactionAmount) * 10) / 100; //TODO
             }
             return sellersList;
+        }
+
+        public async Task<int> GetNumberOfSellers()
+        {
+            return await _sellerRepository.GetNumberOfSellers();
+        }
+
+        public async Task<List<SellerStatisticModel>> GetSellerMonthlyStatisticsAsync(Guid id)
+        {
+            var result = await _sellerRepository.GetSellerByIdAsync(id);
+            var seller = _mapper.Map<SellerModel>(result);
+            var monthlyStatistics = seller.Sales.Select(k => new { k.DateOfSale.Year, k.DateOfSale.Month, k.TransactionAmount })
+                                .GroupBy(x => new { x.Year, x.Month }, (key, group) => new SellerStatisticModel
+                                {
+                                    MonthName = new DateTime(key.Year, key.Month, 1).ToString("MMMM", CultureInfo.InvariantCulture),
+                                    Year = key.Year,
+                                    MonthlySales = group.Sum(k => k.TransactionAmount),
+                                    MonthlyCommisions = (group.Sum(k => k.TransactionAmount) * 10 / 100)
+                                }).ToList();
+            return monthlyStatistics;
         }
     }
 }

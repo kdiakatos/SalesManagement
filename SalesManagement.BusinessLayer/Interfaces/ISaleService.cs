@@ -12,5 +12,6 @@ namespace SalesManagement.BusinessLayer.Interfaces
         Task<List<SaleModel>> GetAllSalesAsync();
         Task<SaleModel> GetSaleByIdAsync(Guid id);
         Task<SaleModel> UpdateSaleAsync(SaleModel sale);
+        Task<decimal> GellTotalSalesAmount();
     }
 }

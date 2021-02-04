@@ -4,12 +4,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h4>List Of Sellers</h4>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table id="sellersTbl" class="table">
     <thead>
         <tr>
             <th>
@@ -19,7 +19,7 @@
                 @Html.DisplayNameFor(model => model.LastName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Commision)
+                @Html.DisplayNameFor(model => model.Commission)
             </th>
             <th></th>
         </tr>
@@ -34,7 +34,7 @@
                 @Html.DisplayFor(modelItem => item.LastName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Commision)
+                @Html.DisplayFor(modelItem => item.Commission)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.SellerId">Edit</a> |
@@ -45,3 +45,10 @@
 }
     </tbody>
 </table>
+
+<script>
+    $(function () {
+        $("#sellersTbl").dataTable();
+    });
+
+</script>

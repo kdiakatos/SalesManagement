@@ -43,6 +43,7 @@ namespace SalesManagement.Web
             services.AddScoped<ISellerRepository, SellerRepository>();
             services.AddScoped<ISaleService, SaleService>();
             services.AddScoped<ISellerService, SellerService>();
+            services.AddScoped<IStatisticService, StatisticService>();
 
             services.AddControllersWithViews();
         }

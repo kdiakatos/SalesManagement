@@ -12,5 +12,8 @@ namespace SalesManagement.BusinessLayer.Interfaces
         Task<List<SellerModel>> GetAllSellersAsync();
         Task<SellerModel> GetSellerByIdAsync(Guid id);
         Task<SellerModel> UpdateSellerAsync(SellerModel seller);
+
+        Task<int> GetNumberOfSellers();
+        Task<List<SellerStatisticModel>> GetSellerMonthlyStatisticsAsync(Guid id);
     }
 }

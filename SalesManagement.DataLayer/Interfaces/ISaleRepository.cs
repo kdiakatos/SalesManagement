@@ -12,7 +12,6 @@ namespace SalesManagement.DataLayer.Interfaces
         Task<List<Sale>> GetAllSalesAsync();
         Task<Sale> GetSaleByIdAsync(Guid id);
         Task<Sale> UpdateSaleAsync(Sale sale);
-
         Task<List<Sale>> GetAllSalesBySellerIdAsync(Guid id);
     }
 }

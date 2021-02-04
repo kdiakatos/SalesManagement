@@ -10,7 +10,7 @@ namespace SalesManagement.DataLayer.Entities
         public Guid SaleId { get; set; }
         public Seller Seller { get; set; }
         public Guid SellerId { get; set; }
-        [Column(TypeName = "decimal(18,4)")]
+        [Column(TypeName = "decimal(18,2)")]
         public decimal TransactionAmount { get; set; }
         public DateTime DateOfSale { get; set; }
     }

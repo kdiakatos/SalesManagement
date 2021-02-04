@@ -108,5 +108,12 @@ namespace SalesManagement.Web.Controllers
             await _sellerService.DeleteSellerAsync(id);
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpGet]
+        public async Task<JsonResult> GetMonthlyStatisticsAsync(Guid id)
+        {
+            var result = await _sellerService.GetSellerMonthlyStatisticsAsync(id);
+            return new JsonResult(result);
+        }
     }
 }

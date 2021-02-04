@@ -51,5 +51,10 @@ namespace SalesManagement.DataLayer.Repositories
         {
             return await _salesManagementContext.Sellers.Include(x => x.Sales).ToListAsync();
         }
+
+        public async Task<int> GetNumberOfSellers()
+        {
+            return await _salesManagementContext.Sellers.CountAsync();
+        }
     }
 }

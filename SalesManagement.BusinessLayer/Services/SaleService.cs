@@ -5,6 +5,7 @@ using SalesManagement.DataLayer.Entities;
 using SalesManagement.DataLayer.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace SalesManagement.BusinessLayer.Services
@@ -49,6 +50,12 @@ namespace SalesManagement.BusinessLayer.Services
         public async Task<List<SaleModel>> GetAllSalesAsync()
         {
             return _mapper.Map<List<SaleModel>>(await _saleRepository.GetAllSalesAsync());
+        }
+
+        public async Task<decimal> GellTotalSalesAmount()
+        {
+            var result = await GetAllSalesAsync();
+            return result.Sum(a => a.TransactionAmount);
         }
     }
 }
