@@ -3,55 +3,45 @@
     ViewData["Title"] = "Home Page";
 }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body {
+        background-image: url("./../images/sales-manager.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+</style>
 
-<div class="row">
-    <div class="col-lg-6">
-        <h1>Total Sellers</h1>
-        <div class="card bg-warning text-white">
-            <div class="card-body">
-                <span class="fa fa-group" style="font-size:36px; color:black"></span>
-                <span class="branding-bar" style="float:right; font-size: xx-large; color:black">@Model.TotalSellers</span>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-lg-6">
+            <h1 style="background-color: rgba(2245,245,245, .8)">Total Sellers</h1>
+            <div class="card bg-warning text-white">
+                <div class="card-body">
+                    <span class="fa fa-group" style="font-size:36px; color:black"></span>
+                    <span class="branding-bar" style="float:right; font-size: xx-large; color:black">@Model.TotalSellers</span>
+                </div>
             </div>
         </div>
+        <div class="col-lg-6">
+            <h1 style="background-color:rgba(2245,245,245, .8)">Total Sales</h1>
+            <div class="card bg-warning text-white">
+                <div class="card-body">
+                    <span class='fa fa-bitcoin' style='font-size:36px; color:black'></span>
+                    <span class="branding-bar" style="float:right; font-size: xx-large; color:black">@Model.TotalSales</span>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div class="col-lg-6">
-        <h1>Total Sales</h1>
-        <div class="card bg-warning text-white">
-            <div class="card-body">
-                <span class='fa fa-bitcoin' style='font-size:36px; color:black'></span>
-                <span class="branding-bar" style="float:right; font-size: xx-large; color:black">@Model.TotalSales</span>
-            </div>
-        </div>
-    </div>
-
-</div>
-<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
-
-@*<div class="col-lg-6">
-        <h1>Total Sellers</h1>
-        <div class="card" style="background-color">
-            <span class="mif-users icon"></span>
-            <span class="branding-bar">@Model.TotalSellers</span>
-        </div>
-    </div>*@
+    <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
 
 
-@*<div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    </div>*@
-
-@*<div data-role="tile">
-        <div class="row">
-            <div class="col-12" style="text-align:center">
-                <h1>@Model.TotalSellers</h1>
-            </div>
-        </div>
-    </div>*@
-
-
-
-
-@*@Html.DisplayTextFor(model => model.TotalSellers)
-    @Html.DisplayTextFor(model => model.TotalSales)*@
+</body>

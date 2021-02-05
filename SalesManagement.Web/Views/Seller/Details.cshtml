@@ -4,6 +4,8 @@
 
 
 <h4>Seller Details</h4>
+<hr />
+<br />
 
 <div>
     <dl class="row">
@@ -44,9 +46,9 @@
     $(function () {
         var sellerId = '@Model.SellerId';
         $('#tblTotals').DataTable({
-            "processing": true,
-            "serverSide": true,
-            "filter": false,
+            "processing": false,
+            "serverSide": false,
+            "filter": true,
             "responsive": true,
             "ajax": {
                 "url": "/Seller/GetMonthlyStatistics?id=" + sellerId,
@@ -57,7 +59,7 @@
             "columnDefs": [{
                 "targets": [0],
                 "visible": true,
-                "searchable": false
+                "searchable": true
             }],
             "columns": [
                 { "data": "monthName", "name": "Month", "autoWidth": true },
